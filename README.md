@@ -1,6 +1,5 @@
 ## Devops on aws code build test
 
-#### 1. DevOps on AWS: Code, Build, and Test 
 Credit goes to to the course [DevOps on AWS](https://www.udemy.com/course/devops-aws-code-build-test)
 
 #### Code, build, and test
