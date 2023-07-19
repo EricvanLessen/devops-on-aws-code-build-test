@@ -1,9 +1,9 @@
 ## Devops on aws code build test
 
-### 1. DevOps on AWS: Code, Build, and Test 
+#### 1. DevOps on AWS: Code, Build, and Test 
 Credit goes to to the course [DevOps on AWS](https://www.udemy.com/course/devops-aws-code-build-test)
 
-### Code, build, and test
+#### Code, build, and test
 - Explore AWS services that help application service delivery
 - AWS code commit
 - AWS Code Build
@@ -14,11 +14,11 @@ Credit goes to to the course [DevOps on AWS](https://www.udemy.com/course/devops
 - Best practice for continous integration
 - With automation comes confidence and better quality software
 
-### Code, build, test
+#### Code, build, test
 - Development and production environments may differ
 - How can developer and operations team work better together: DevOps
 
-### Thinking DevOps
+#### Thinking DevOps
 - DevOps is not equal to Infrastructure as Code, agile, automated testing and delivery, ...
 - DevOps: Enables development teams and operations teams to work better together and ultimately share the responsibility for the softare they build
 - DevOps bridges the gap of development and operations
@@ -32,7 +32,7 @@ Credit goes to to the course [DevOps on AWS](https://www.udemy.com/course/devops
 - DevOps tools and practices: Continous intergration and continous delivery (CI/CD)
 - DevOps loop: Code, Build, Test, Release, Deploy, Operate, Monitor, Code, ...
 
-### Example Application
+#### Example Application
 - Static react frontend
 - Browser (users)
 - Browser talks to API Gateway Backend (websocket APIs)
@@ -46,7 +46,7 @@ Credit goes to to the course [DevOps on AWS](https://www.udemy.com/course/devops
 - IsGameOver: State machine executes
 - In use: AWS Services, Lambda, DynamoDB, Step Functions
 
-### The Code
+#### The Code
 - Project managers want to add features
 - Developers want to develop quickly and secure
 - Questions for the new team
@@ -55,7 +55,7 @@ Credit goes to to the course [DevOps on AWS](https://www.udemy.com/course/devops
 - Question 3: How often should I be commiting and integrating?
 - Question 4: When do changes get deployed for end users?
 
-### Answers
+#### Answers
 - Where is the code: changes availabe to all team members with AWS CodeCommit is a secure, highly scalable, fully managed source control service that hosts private Git repositories
 - Where should I be commiting my code updates: E.g. branching strategy and do a merge with the main branch
 - How often should I be commiting and implementing: Push to the cloud, its safe
@@ -63,12 +63,12 @@ Credit goes to to the course [DevOps on AWS](https://www.udemy.com/course/devops
 - CodeCommit authentication: IAM generated credentials, SSH key, Signed credentials 
 - CodeCommit authentication: CLI to access, then use commands as in git (add, commit, push)
 
-### AWS Sam
+#### AWS Sam
 - CLI to create services
 - Creates AWS Lambda, Amazon API Gateway, AWS Step Functions, Amazon DynamoDB
 - React application in an S3 bucket, S3 is the "webserver"
 
-### The Build
+#### The Build
 - Successful build: outputs a package artefact ready for deployment e.g. a docker image that can be passed on to the deployment process to roll an update
 - A build usually integrates tests e.g. unit tests
 - Commiting something that brakes the source control is a braking the build
@@ -78,20 +78,20 @@ Credit goes to to the course [DevOps on AWS](https://www.udemy.com/course/devops
 - CodeBuild need a build project and a build spec file
 - Build Project: Source, Environment, IAM role, Logging
 
-### buildspec.yml
-#### Amazon CodeBuild Buildspec.yml README
+#### buildspec.yml
+##### Amazon CodeBuild Buildspec.yml README
 
 This README provides an overview and explanation of the `buildspec.yml` file used in Amazon CodeBuild projects. The `buildspec.yml` file is a YAML formatted configuration file that defines the build and deployment stages for a project within Amazon CodeBuild. This file is stored in the root directory of your source code repository and serves as a blueprint for the build process.
 
-#### What is Amazon CodeBuild?
+##### What is Amazon CodeBuild?
 
 Amazon CodeBuild is a fully managed continuous integration service that compiles source code, runs tests, and produces software packages that are ready for deployment. It supports various programming languages, build tools, and integrations with other AWS services, making it a powerful tool for automating your build, test, and deployment processes.
 
-#### The Buildspec.yml File
+##### The Buildspec.yml File
 
 The `buildspec.yml` file is at the heart of the CodeBuild process. It defines the sequence of build and deployment actions that CodeBuild will perform when it runs a build on your project. The file contains a series of build commands, environment variables, settings, and other configuration options that instruct CodeBuild on how to build your project.
 
-#### Basic Structure
+##### Basic Structure
 
 The `buildspec.yml` file follows a hierarchical YAML structure. Here's a basic outline of the possible sections:
 
@@ -121,7 +121,7 @@ artifacts:    # Defines the output artifacts to be produced by the build.
   name: build-output-name
 ```
 
-#### Build Phases
+##### Build Phases
 The `phases` section defines the various phases of the build process. These phases include:
 
 1. **Install (optional)**: Allows you to install any necessary dependencies or prerequisites needed for the build.
@@ -131,13 +131,13 @@ The `phases` section defines the various phases of the build process. These phas
 
 Each phase can contain one or more commands, which are executed sequentially.
 
-#### Artifacts
+##### Artifacts
 - The `artifacts` (section specifies the **output artifacts** that CodeBuild should produce after the build completes successfully. These artifacts can include build artifacts, compiled binaries, test reports, and any other files generated during the build process.
 
-#### Environment Variables
+##### Environment Variables
 - You can define environment variables directly in the `buildspec.yml` file. These variables can be used in your build commands and provide flexibility for passing dynamic values into the build process.
 
-#### Example
+##### Example
 - Here's a simple example of a `buildspec.yml` file for a Node.js application:
 
 ```yaml
@@ -156,13 +156,13 @@ artifacts:
 
 In this example, the build process installs Node.js dependencies, runs the build script to compile the application, and then generates an artifact containing all files within the `app` directory.
 
-#### Integration with CodeBuild
+##### Integration with CodeBuild
 - To use the `buildspec.yml` file with CodeBuild, you simply include the file in the root directory of your source code repository. When you start a build in CodeBuild, it will automatically detect and use the `buildspec.yml` configuration to execute the defined build steps.
 
-#### Conclusion
+##### Conclusion
 - The `buildspec.yml` file is a powerful tool that enables you to define and customize your build and deployment process in Amazon CodeBuild. By creating a well-structured `buildspec.yml` file, you can ensure a smooth and efficient continuous integration workflow for your projects.
 
-### branching strategy
+#### branching strategy
 - Branch in Git is a pointer to a commit
 - The commits form a DAG
 - A commit may have multiple parents
